@@ -5,8 +5,223 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Friend Finder</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
 </head>
 <body>
-    survey
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center"><span class="fa fa-fire"></span>Friend Finder</h1>
+            <hr>
+            <h2 class="text-center">Discover your best friend after answering a few questions!</h2>
+            <br>
+            <div class="text-center">
+                <a href="./"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span>Home</button></a>
+            </div>
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" id="inputName" placeholder="Enter Name">
+            </div>
+            <!-- <div class="form-group">
+                <label>Age</label>
+                <input type="text" class="form-control" id="age" placeholder="Age">
+            </div> -->
+            <div class="form-group">
+                <label>Upload Profile Picture</label>
+                <input type="file" class="form-control-file" id="picture">
+            </div>
+        </form>
+
+
+
+
+
+        <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect1">I see myself as extraverted, enthusiastic.</label>
+        </div>
+        <select class="custom-select" id="inputGroupSelect1">
+            <option selected value="0">Choose...</option>
+            <option value="1">Disagree strongly</option>
+            <option value="2">Disagree a little</option>
+            <option value="3">Neither agree nor disagree</option>
+            <option value="4">Agree a little</option>
+            <option value="5">Agree strongly</option>
+        </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect2">I see myself as extraverted, enthusiastic.</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect2">
+            <option selected value="0">Choose...</option>
+            <option value="1">Disagree strongly</option>
+            <option value="2">Disagree a little</option>
+            <option value="3">Neither agree nor disagree</option>
+            <option value="4">Agree a little</option>
+            <option value="5">Agree strongly</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect3"> I see myself as dependable, self-disciplined.</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect3">
+            <option selected value="0">Choose...</option>
+            <option value="1">Disagree strongly</option>
+            <option value="2">Disagree a little</option>
+            <option value="3">Neither agree nor disagree</option>
+            <option value="4">Agree a little</option>
+            <option value="5">Agree strongly</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect4">I see myself as anxious, easily upset.</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect4">
+            <option selected value="0">Choose...</option>
+            <option value="1">Disagree strongly</option>
+            <option value="2">Disagree a little</option>
+            <option value="3">Neither agree nor disagree</option>
+            <option value="4">Agree a little</option>
+            <option value="5">Agree strongly</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect5">I see myself as extraverted, enthusiastic.</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect5">
+            <option selected value="0">Choose...</option>
+            <option value="1">Disagree strongly</option>
+            <option value="2">Disagree a little</option>
+            <option value="3">Neither agree nor disagree</option>
+            <option value="4">Agree a little</option>
+            <option value="5">Agree strongly</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect6">I see myself as reserved, quiet.</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect6">
+            <option selected value="0">Choose...</option>
+            <option value="1">Disagree strongly</option>
+            <option value="2">Disagree a little</option>
+            <option value="3">Neither agree nor disagree</option>
+            <option value="4">Agree a little</option>
+            <option value="5">Agree strongly</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect7"> I see myself as sympathetic, warm.</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect7">
+            <option selected value="0">Choose...</option>
+            <option value="1">Disagree strongly</option>
+            <option value="2">Disagree a little</option>
+            <option value="3">Neither agree nor disagree</option>
+            <option value="4">Agree a little</option>
+            <option value="5">Agree strongly</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect8">I see myself as disorganized, careless.</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect8">
+            <option selected value="0">Choose...</option>
+            <option value="1">Disagree strongly</option>
+            <option value="2">Disagree a little</option>
+            <option value="3">Neither agree nor disagree</option>
+            <option value="4">Agree a little</option>
+            <option value="5">Agree strongly</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect9"> I see myself as calm, emotionally stable.</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect9">
+            <option selected value="0">Choose...</option>
+            <option value="1">Disagree strongly</option>
+            <option value="2">Disagree a little</option>
+            <option value="3">Neither agree nor disagree</option>
+            <option value="4">Agree a little</option>
+            <option value="5">Agree strongly</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect10">I see myself as conventional, uncreative.</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect10">
+            <option selected value="0">Choose...</option>
+            <option value="1">Disagree strongly</option>
+            <option value="2">Disagree a little</option>
+            <option value="3">Neither agree nor disagree</option>
+            <option value="4">Agree a little</option>
+            <option value="5">Agree strongly</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit" id="submitBtn">Button</button>
+    </div>
+    
+    
+    
+    <script>
+    
+    var choicesArray = [];
+
+    $("#submitBtn").on("click", function (event) {
+        event.preventDefault();
+        for (let i = 1; i <= 10; i++) {
+            choicesArray.push($("#inputGroupSelect" + i).val())
+        };
+        console.log(choicesArray);
+
+        var profile = {
+            name: $("#inputName").val().trim(),
+            photo: $("#picture").val(),
+            scores: choicesArray
+        };
+
+        $.post("/api/friends", profile, function(data) {
+
+        // If a table is available... tell user they are booked.
+        if (data) {
+          alert("Yay! You are officially booked!");
+        }
+
+        // If a table is available... tell user they on the waiting list.
+        else {
+          alert("Sorry you are on the wait list");
+        }
+
+        });
+
+
+    });
+    
+    
+    
+    
+    
+    </script>
+
 </body>
 </html>
+
+
+
