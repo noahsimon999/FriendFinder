@@ -60,7 +60,7 @@
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect2">I see myself as extraverted, enthusiastic.</label>
+            <label class="input-group-text" for="inputGroupSelect2">I see myself as critical, quarrelsome.</label>
             </div>
             <select class="custom-select" id="inputGroupSelect2">
             <option selected value="0">Choose...</option>
@@ -99,7 +99,7 @@
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect5">I see myself as extraverted, enthusiastic.</label>
+            <label class="input-group-text" for="inputGroupSelect5">I see myself as open to new experiences, complex.</label>
             </div>
             <select class="custom-select" id="inputGroupSelect5">
             <option selected value="0">Choose...</option>
@@ -175,13 +175,32 @@
             <option value="5">Agree strongly</option>
             </select>
         </div>
-        <button class="btn btn-primary" type="submit" id="submitBtn">Button</button>
+        <button class="btn btn-primary" type="submit" id="submitBtn">Find your match!</button>
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Your best match is: </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="userMatch"></p>
+                    <img id="userMatchImage" width="300" src="">
+		        </div>
+                </div>
+            </div>
+        </div>
     </div>
     
     
     
-    <script>
-    
+<script type="text/javascript">
+    // $("#modal1").hide();
+
     var choicesArray = [];
 
     $("#submitBtn").on("click", function (event) {
@@ -194,31 +213,26 @@
         var profile = {
             name: $("#inputName").val().trim(),
             photo: $("#picture").val(),
-            scores: choicesArray
+            scores: choicesArray,
         };
 
-        $.post("/api/friends", profile, function(data) {
-
-        // If a table is available... tell user they are booked.
-        if (data) {
-          alert("Yay! You are officially booked!");
-        }
-
-        // If a table is available... tell user they on the waiting list.
-        else {
-          alert("Sorry you are on the wait list");
-        }
-
+        $.post("/api/friends", profile).done(function(data) {
+            $("#userMatch").html(data.matchName);
+            $("#userMatchImage").attr("src", data.matchImage);
+            $(".modal").show();
+            $("#inputName").val("");
+            $(".custom-select").val("0");
+            choicesArray = [];
         });
+    });
 
-
+    $(".close").on("click", function (event) {
+        $(".modal").hide();
     });
     
     
     
-    
-    
-    </script>
+</script>
 
 </body>
 </html>
